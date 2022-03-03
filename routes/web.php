@@ -28,16 +28,6 @@ Route::get('/db-migrate', function() {
     echo Artisan::output();
 });
 
-Route::get('db-show', function() {
-    try {
-        \DB::connection()->getPDO();
-        $db_name = \DB::connection()->getDatabaseName();
-        var_dump(\DB::connection());
-    } catch (\Exception $e) {
-        echo 'None';   
-    }
-});
-
 Route::get('/', function () {
     return view('welcome');
 });
