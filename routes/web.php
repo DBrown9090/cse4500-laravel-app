@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\CalendarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use App\Http\Controllers\TodoController;
 */
 
 Route::resource('/todos', TodoController::class);
+
+Route::resource('/calendar', CalendarController::class);
 
 Route::get('/db-test', function() {
     try {
@@ -37,11 +40,11 @@ Route::get('/', function () {
 
 /*Route::get('/todos', function () {
     return view('todos');
-});*/
+});
 
 Route::get('/calendar', function () {
     return view('calendar');
-});
+});*/
 
 Route::get('/board', function () {
     return view('board');
