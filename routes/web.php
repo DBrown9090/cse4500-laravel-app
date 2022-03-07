@@ -50,7 +50,7 @@ Route::get('/board', function () {
     return view('board');
 });
 
-Route::get('/events-feed', CalendarController::class)->test();
+Route::get('/events-feed', [CalendarController::class, 'test']);
     /*return response()->json([[
         "title"=> "CSE4500 Class",
         "start"=> "2022-02-23T17:30:00",
