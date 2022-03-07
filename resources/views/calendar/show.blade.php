@@ -8,6 +8,8 @@
 
 @section('content')
   <h2>{{ $calendar->title; }}</h2>
-  <div><p>Starts:{{ $calendar->startdatetime; }}</p></div>
-  <div><p>Ends:{{ $calendar->startdatetime; }}</p></div>
+  <div>Starts: <x-adminlte-input name="startdatetime" type="datetime-local" label="Start date and time" value="{{$calendar->startdatetime}}" /></div>
+  <div>Ends: <x-adminlte-input name="enddatetime" type="datetime-local" label="End date and time" value="{{$calendar->enddatetime}}" /></div>
+  <p>Starts:{{ $calendar->startdatetime; }}</p></div>
+  <div><p>Ends:{{ $calendar->enddatetime; }}</p></div>
 @stop
