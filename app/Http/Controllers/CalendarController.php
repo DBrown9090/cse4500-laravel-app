@@ -17,12 +17,6 @@ class CalendarController extends Controller
       return view('calendar');
     }
 
-    public function getEvents()
-    {
-      $calendar = Calendar::all();
-      return $calendar->toJson();
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -53,6 +47,13 @@ class CalendarController extends Controller
            'enddatetime' => $request->enddatetime,
       ]);
       return $this->index();
+    }
+
+
+    public function show()
+    {
+      $calendar = Calendar::all();
+      return $calendar->toJson();
     }
 
     /**
