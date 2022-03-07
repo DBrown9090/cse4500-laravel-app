@@ -50,8 +50,7 @@ Route::get('/board', function () {
     return view('board');
 });
 
-Route::get('/events-feed', function() {
-    return redirect()->action([CalendarController::class, 'test']);
+Route::get('/events-feed', CalendarController::class)->test();
     /*return response()->json([[
         "title"=> "CSE4500 Class",
         "start"=> "2022-02-23T17:30:00",
@@ -62,7 +61,6 @@ Route::get('/events-feed', function() {
         "start"=> "2022-02-28T17:30:00",
         "end"=> "2022-02-28T18:45:00"
       ]]);*/
-});
 
 Route::fallback(function() {
     return view('unknown');
