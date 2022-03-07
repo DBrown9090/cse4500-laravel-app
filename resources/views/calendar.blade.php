@@ -30,7 +30,10 @@
 $( document ).ready(function() {
     var calendar = new FullCalendar.Calendar($('#calendar')[0], {
       initialView: 'dayGridMonth',
-      events: '/events-feed'
+      events: '/events-feed',
+      eventClick: function(info) {
+        console.log(info);
+      }
     });
     calendar.render();
 })
