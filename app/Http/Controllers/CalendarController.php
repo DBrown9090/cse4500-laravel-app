@@ -12,6 +12,12 @@ class CalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function test()
+    {
+      $calendar = Calendar::all();
+      return $calendar->toJson();
+    }
     public function index()
     {
       return view('calendar');
@@ -57,11 +63,6 @@ class CalendarController extends Controller
      */
     public function show($id)
     {
-      if (!$id)
-      {
-        $calendar = Calendar::all();
-        return $calendar->toJson();
-      }
       $calendar= Calendar::find($id);
       return view('calendar.show',compact('calendar'));
     }
