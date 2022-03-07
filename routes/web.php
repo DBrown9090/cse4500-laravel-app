@@ -51,7 +51,7 @@ Route::get('/board', function () {
 });
 
 Route::get('/events-feed', function() {
-    return redirect()->action([CalendarController::class, 'getEvents'])->toJson();
+    return redirect()->action([CalendarController::class, 'getEvents']);
     /*return response()->json([[
         "title"=> "CSE4500 Class",
         "start"=> "2022-02-23T17:30:00",
