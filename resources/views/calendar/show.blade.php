@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-  <h2>{{ $todo->title; }}</h2>
-  <div><p>Starts:{{ $todo->startdatetime; }}</p></div>
-  <div><p>Ends:{{ $todo->startdatetime; }}</p></div>
+  <h2>{{ $calendar->title; }}</h2>
+  <div><p>Starts:{{ $calendar->startdatetime; }}</p></div>
+  <div><p>Ends:{{ $calendar->startdatetime; }}</p></div>
 @stop

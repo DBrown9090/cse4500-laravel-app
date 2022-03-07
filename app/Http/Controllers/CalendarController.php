@@ -15,7 +15,7 @@ class CalendarController extends Controller
 
     public function test()
     {
-      $calendar = Calendar::select('title', 'startdatetime AS start', 'enddatetime AS end')->get();
+      $calendar = Calendar::select('id', 'title', 'startdatetime AS start', 'enddatetime AS end')->get();
       return $calendar->toJson();
     }
 
