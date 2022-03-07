@@ -32,7 +32,7 @@ $( document ).ready(function() {
       initialView: 'dayGridMonth',
       events: '/events-feed',
       eventClick: function(info) {
-        console.log(info);
+        location.href = '/'+info.event.id;
       }
     });
     calendar.render();
