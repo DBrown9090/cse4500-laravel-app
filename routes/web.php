@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('/todos', TodoController::class);
+
 Route::get('/db-test', function() {
     try {
         \DB::connection()->getPDO();
         $db_name = \DB::connection()->getDatabaseName();
         echo 'Database Connected: '.$db_name;
     } catch (\Exception $e) {
-        echo 'None';   
+        echo 'None';
     }
 });
 
@@ -32,9 +35,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/todos', function () {
+/*Route::get('/todos', function () {
     return view('todos');
-});
+});*/
 
 Route::get('/calendar', function () {
     return view('calendar');
