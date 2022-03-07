@@ -49,13 +49,6 @@ class CalendarController extends Controller
       return $this->index();
     }
 
-
-    public function show()
-    {
-      $calendar = Calendar::all();
-      return $calendar->toJson();
-    }
-
     /**
      * Display the specified resource.
      *
@@ -64,6 +57,11 @@ class CalendarController extends Controller
      */
     public function show($id)
     {
+      if (!$id)
+      {
+        $calendar = Calendar::all();
+        return $calendar->toJson();
+      }
       $calendar= Calendar::find($id);
       return view('calendar.show',compact('calendar'));
     }
