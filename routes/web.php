@@ -34,9 +34,9 @@ Route::get('/db-migrate', function() {
     echo Artisan::output();
 });
 
-Route::get('/', function () {
+Route::get('/{name}', function () {
     return view('welcome');
-});
+})->where('name', '|home');
 
 /*Route::get('/todos', function () {
     return view('todos');
