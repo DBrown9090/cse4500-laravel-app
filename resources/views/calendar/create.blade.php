@@ -22,7 +22,8 @@
 $( document ).ready(function() {
     let d = new Date();
     let dcalc = (-1)*(d.getTimezoneOffset() / 60);
-    document.getElementById("hiddenoffsetinput").value = Math.sign(dcalc) + Math.abs(dcalc).padStart(2, '0');
+    const dsign = Math.sign(dcalc) >= 0 ? "+" : "-";
+    document.getElementById("hiddenoffsetinput").value = dsign + Math.abs(dcalc).padStart(2, '0');
 })
 </script>
 @stop
