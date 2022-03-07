@@ -50,8 +50,8 @@ class CalendarController extends Controller
 
       $calendar = Calendar::create([
            'title' => $request->title,
-           'startdatetime' => $request->startdatetime."+".$request->offset,
-           'enddatetime' => $request->enddatetime."+".$request->offset,
+           'startdatetime' => $request->startdatetime.$request->offset,
+           'enddatetime' => $request->enddatetime.$request->offset,
       ]);
       return $this->index();
     }

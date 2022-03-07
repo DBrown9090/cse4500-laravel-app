@@ -21,7 +21,8 @@
 <script>
 $( document ).ready(function() {
     let d = new Date();
-    document.getElementById("hiddenoffsetinput").value = (-1)*(d.getTimezoneOffset() / 60);
+    let dcalc = (-1)*(d.getTimezoneOffset() / 60);
+    document.getElementById("hiddenoffsetinput").value = Math.sign(dcalc) + Math.abs(dcalc).padStart(2, '0');
 })
 </script>
 @stop
