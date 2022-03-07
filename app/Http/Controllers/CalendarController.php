@@ -18,6 +18,7 @@ class CalendarController extends Controller
       $calendar = Calendar::all();
       return $calendar->toJson();
     }
+    
     public function index()
     {
       return view('calendar');

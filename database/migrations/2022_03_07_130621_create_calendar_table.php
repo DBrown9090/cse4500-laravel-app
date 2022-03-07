@@ -13,7 +13,7 @@ class CreateCalendarTable extends Migration
      */
     public function up()
     {
-        Schema::create('calendar', function (Blueprint $table) {
+        Schema::create('calendars', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->dateTimeTz('startdatetime');
@@ -29,6 +29,6 @@ class CreateCalendarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('calendar');
+        Schema::dropIfExists('calendars');
     }
 }
