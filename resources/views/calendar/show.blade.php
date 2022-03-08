@@ -15,10 +15,10 @@
 @section('js')
 <script>
 $( document ).ready(function() {
-    var start = new Date("{{date('Y-m-d\Th:i',strtotime($calendar->startdatetime));}}");
-    var end = new Date("{{date('Y-m-d\Th:i',strtotime($calendar->enddatetime));}}");
-    document.getElementById("startdatetime").value=start.toISOString();
-    document.getElementById("enddatetime").value=end.toISOString();
+    var start = new Date("{{date('Y-m-d\Th:i',strtotime($calendar->startdatetime));}}").toISOString();
+    var end = new Date("{{date('Y-m-d\Th:i',strtotime($calendar->enddatetime));}}").toISOString();
+    document.getElementById("startdatetime").value=start.substring(0, start.indexOf(':', start.indexOf(':')+1));
+    document.getElementById("enddatetime").value=end.substring(0, end.indexOf(':', end.indexOf(':')+1));
 })
 </script>
 @stop
