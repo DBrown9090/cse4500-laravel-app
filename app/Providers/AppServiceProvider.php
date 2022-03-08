@@ -24,10 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      $whitelist = array('127.0.0.1', "::1");
-      if ($_SERVER && !empty($_SERVER['REMOTE_ADDR']) && !in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
         URL::forceScheme('https');
-      }
-        //
     }
 }
